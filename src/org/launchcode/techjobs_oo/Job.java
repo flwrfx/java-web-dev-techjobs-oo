@@ -79,11 +79,11 @@ public class Job {
         String finalString = "";
         finalString += ("\n");
         finalString += ("ID: " + this.getId() + "\n");
-        finalString += ("Name: " + ((this.getName() == null) ? "Data not available" : this.getName()) + "\n");
-        finalString += ("Employer: " + ((this.getEmployer() == null) ? "Data not available" : this.getEmployer().getValue()) + "\n");
-        finalString += ("Location: " + ((this.getLocation() == null) ? "Data not available" : this.getLocation().getValue()) + "\n");
-        finalString += ("Position Type: " + ((this.getPositionType() == null) ? "Data not available" : this.getPositionType().getValue()) + "\n");
-        finalString += ("Core Competency: " + ((this.getCoreCompetency() == null) ? "Data not available" : this.getCoreCompetency().getValue()) + "\n");
+        finalString += ("Name: " + ((this.getName() == null || this.getName() == "") ? "Data not available" : this.getName()) + "\n");
+        finalString += ("Employer: " + ((this.getEmployer() == null || this.getEmployer().getValue() == "") ? "Data not available" : this.getEmployer().getValue()) + "\n");
+        finalString += ("Location: " + ((this.getLocation() == null || this.getLocation().getValue() == "") ? "Data not available" : this.getLocation().getValue()) + "\n");
+        finalString += ("Position Type: " + ((this.getPositionType() == null || this.getPositionType().getValue() == "") ? "Data not available" : this.getPositionType().getValue()) + "\n");
+        finalString += ("Core Competency: " + ((this.getCoreCompetency() == null || this.getCoreCompetency().getValue() == "") ? "Data not available" : this.getCoreCompetency().getValue()) + "\n");
         finalString += ("\n");
         return finalString;
     }
