@@ -64,10 +64,11 @@ public class JobTest {
         assertFalse(equalityJob1.equals(equalityJob2));
     }
 
-    @Test
     /**
      * TDD-style setup to test/develop toString()
      * */
+
+    @Test
     public void testToStringStartsAndEndsWithBlankLine(){
         assertTrue(testJob1.toString().startsWith("\n"));//?
         assertTrue(testJob1.toString().endsWith("\n"));//?
@@ -83,6 +84,19 @@ public class JobTest {
         assertEquals(jobSplit[5].split(":")[0], "Position Type");
         assertEquals(jobSplit[6].split(":")[0], "Core Competency");
     }
+
+    @Test
+    public void testToStringProperlyTracksUnavailableData(){
+        //testJob1.toString();
+        Job testJob3 = new Job();
+        testJob3.setEmployer(new Employer("ACME"));
+        String[] jobSplit = testJob3.toString().split("\n");
+        assertEquals(jobSplit[4].split(":")[1].trim(), "Data not available");
+
+
+    }
+
+
 
 
 }//JobTest class

@@ -71,15 +71,20 @@ public class Job {
 
     @Override
     public String toString(){
+        //String nameCheck = ((this.getName() == null) ? "Data not available" : this.getName());
+
+        //((this.getId() == null) ? "Data not available" : this.getId())
+
+
         String finalString = "";
-        finalString += "\n";
+        finalString += ("\n");
         finalString += ("ID: " + this.getId() + "\n");
-        finalString += ("Name: " + this.getName() + "\n");
-        finalString += ("Employer: " + this.getEmployer() + "\n");
-        finalString += ("Location: " + this.getLocation() + "\n");
-        finalString += ("Position Type: " + this.getPositionType() + "\n");
-        finalString += ("Core Competency: " + this.getCoreCompetency() + "\n");
-        finalString += "\n";
+        finalString += ("Name: " + ((this.getName() == null) ? "Data not available" : this.getName()) + "\n");
+        finalString += ("Employer: " + ((this.getEmployer() == null) ? "Data not available" : this.getEmployer().getValue()) + "\n");
+        finalString += ("Location: " + ((this.getLocation() == null) ? "Data not available" : this.getLocation().getValue()) + "\n");
+        finalString += ("Position Type: " + ((this.getPositionType() == null) ? "Data not available" : this.getPositionType().getValue()) + "\n");
+        finalString += ("Core Competency: " + ((this.getCoreCompetency() == null) ? "Data not available" : this.getCoreCompetency().getValue()) + "\n");
+        finalString += ("\n");
         return finalString;
     }
 
